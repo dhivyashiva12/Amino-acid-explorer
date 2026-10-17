@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amino Acid Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="navbar">
+            <a href="#" class="logo">🧬 AminoExplorer</a>
+            <a href="#explorer" class="nav-link">Explore Amino Acids</a>
+        </nav>
+
+        <div class="hero-content">
+            <span class="tag">BIOINFORMATICS LEARNING TOOL</span>
+            <h1>Discover the Building Blocks of Life</h1>
+            <p>
+                Explore the 20 standard amino acids, their chemical
+                properties, molecular masses and biological functions.
+            </p>
+            <a href="#explorer" class="explore-btn">Start Exploring ↓</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>What are Amino Acids?</h2>
+            <p>
+                Amino acids are organic molecules that serve as the
+                building blocks of proteins. Each standard amino acid
+                contains an amino group, a carboxyl group, a hydrogen
+                atom and a variable side chain attached to a central
+                alpha carbon.
+            </p>
+        </section>
+
+        <section id="explorer" class="explorer">
+            <div class="section-heading">
+                <span class="tag">INTERACTIVE DATABASE</span>
+                <h2>Amino Acid Explorer</h2>
+                <p>Search, filter and click any amino acid to learn more.</p>
+            </div>
+
+            <div class="search-box">
+                <span>🔍</span>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search by name, 3-letter code or 1-letter code..."
+                    aria-label="Search amino acids"
+                >
+            </div>
+
+            <div class="filters" id="filterButtons">
+                <button class="filter-btn active" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="Nonpolar">Nonpolar</button>
+                <button class="filter-btn" data-filter="Polar">Polar</button>
+                <button class="filter-btn" data-filter="Acidic">Acidic</button>
+                <button class="filter-btn" data-filter="Basic">Basic</button>
+                <button class="filter-btn" data-filter="Aromatic">Aromatic</button>
+            </div>
+
+            <div class="results-info">
+                <span id="resultCount">20 amino acids</span>
+                <span>Standard amino acids</span>
+            </div>
+
+            <div id="aminoGrid" class="amino-grid"></div>
+
+            <p id="noResults" class="no-results" hidden>
+                No amino acids found. Try another search!
+            </p>
+        </section>
+
+        <section class="info-section">
+            <h2>Why are Amino Acids Important?</h2>
+            <div class="info-grid">
+                <article class="info-card">
+                    <div class="info-icon">🧬</div>
+                    <h3>Protein Formation</h3>
+                    <p>Amino acids join through peptide bonds to form proteins and polypeptide chains.</p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">⚙️</div>
+                    <h3>Enzyme Activity</h3>
+                    <p>The amino acid sequence helps determine protein structure and enzyme function.</p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">🔬</div>
+                    <h3>Bioinformatics</h3>
+                    <p>Amino acid sequences are studied to understand protein structure, function and evolution.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>🧬 Amino Acid Explorer | A Bioinformatics Learning Project</p>
+        <p>Educational resource for students</p>
+    </footer>
+
+    <!-- Details popup -->
+    <div id="detailModal" class="modal" role="dialog"
+         aria-modal="true" aria-labelledby="modalName" hidden>
+        <div class="modal-content">
+            <button id="closeModal" class="close-btn"
+                    aria-label="Close details">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
